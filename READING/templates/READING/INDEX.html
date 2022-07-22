@@ -1,0 +1,38 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/INDEX.css' %}">{% endblock %}
+{% block title %} READING | INDEX {% endblock %}
+
+{% block body %}
+<div class="index">
+    <table border=1 frame=box rules=groups>
+        <caption>INDEX</caption>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Topic</th>
+                <th>Sub Topics to be Covered</th>
+            </tr>
+        </thead>
+        {% for a in Topics %}
+        <tbody>
+            <tr>
+                <td rowspan="{{SubTopicsLen}}">{{a.topic_id}}.</td>
+                <td rowspan="{{SubTopicsLen}}">{{a.topic_title}}</td>
+            </tr>
+            {% for b in SubTopics %}
+            <tr>
+                {% if b.stopic_id.topic_id == a.topic_id %}
+                <form action="{{b.sub_topic_title}}" method="post">
+                    {% csrf_token %}
+                    <td><button class="button button--pandora" type="submit" name="cur-topic" value="{{b.stopic_id.topic_id}}"><span>{{b.sub_topic_title}}</span></button></td>
+                </form>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

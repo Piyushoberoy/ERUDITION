@@ -1,0 +1,72 @@
+{% extends 'READING/BOTTOM-NAVBAR.html' %}
+{% block sub-title %} INTERJECTION {% endblock %}
+
+{% block content %}
+<div class="content">
+	<div class="content-title">
+		<h1> INTERJECTION </h1>
+		<p>An Interjection is a word which expresses some sudden feeling or emootion.</p>
+	</div>
+
+	<div class="content-context">
+		<div class="example">
+			Bravo, what a beautiful house!
+		</div>
+
+		<!-- ----------------------------------------------------------TYPES---------------------------------------------------------- -->
+
+		<div class="types">
+			<ol type="1">Types of interjection:-
+				<li>Primary Interjections</li>
+				<li>Secondary Interjections</li>
+			</ol>
+		</div>
+
+		<!-- ----------------------------------------------------------TYPE---------------------------------------------------------- -->
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Primary Interjections:-</h3>
+				<p>This type of interjection refers to the terms that are entirely interjections and cannot be categorized as any other Part of Speech.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li><u><b>Oops</b></u>, I missed the opportunity.</li>
+					<li><u><b>Wow!</b></u> This is our golden opportunity to participate in the contest.</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Secondary Interjections:-</h3>
+				<p>Secondary Interjections are nouns, adjectives, and other parts of speech that behave as interjections at certain times.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li><u><b>Indeed</b></u>, I was looking forward to your forewarnings.</li>
+					<li><u><b>Goodness!</b></u> How did you complete all the tasks in 2 hours.</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function getOption(x) {
+		if (document.getElementById("correct").checked == true) {
+			console.log("Correct");
+			document.getElementById("cr").style.backgroundColor = "#59F6A1";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+
+		}
+		else {
+			console.log("Wrong");
+			// document.body.style.backgroundColor = "White"
+			document.getElementById("cr").style.backgroundColor = "red";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+		}
+	}
+</script>
+{% endblock %}

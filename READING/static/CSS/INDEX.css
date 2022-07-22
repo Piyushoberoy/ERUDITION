@@ -1,0 +1,101 @@
+.index{
+    padding-top: 120px;
+}
+.index table {
+    margin: auto;
+    width: 800px;
+    text-align: center;
+    color: black;
+}
+
+.index table caption {
+    font-size: 60px;
+    transition: 0.5s;
+    text-shadow: 0px 10px 20px black;
+}
+
+.index th {
+    background-color: var(--theme);
+    border: 2px solid var(--theme);
+    color: white;
+}
+
+.index thead,
+tbody {
+    border: 2px solid var(--theme);
+}
+
+.index th,
+.index td {
+    padding: 10px;
+}
+
+.dark-mode .index table{
+    color: white;
+}
+.dark-mode .index table caption {
+    text-shadow: 0px 10px 20px white;
+}
+
+.button {
+    pointer-events: auto;
+    cursor: pointer;
+    background: #e7e7e7;
+    border: none;
+    padding: 1.5rem 3rem;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    display: inline-block;
+}
+
+.button::before,
+.button::after {
+    width: 100%;
+    height: 100%;
+}
+
+.button--pandora {
+    background: #000;
+    font-weight: 700;
+    padding: 0;
+    border-radius: 5px;
+    width: 10rem;
+    transition: 0.5s;
+}
+
+.button--pandora span {
+    display: block;
+    background: var(--theme);
+    padding: 1.2rem 1.6rem;
+    border: 1px solid var(--theme);
+    border-radius: 5px;
+    transform: translate3d(-4px, -4px, 0);
+    transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+}
+
+.button--pandora:hover span {
+    transform: translate3d(-8px, -8px, 0);
+}
+
+@media screen and (max-width:800px) {
+    .index table {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .index{
+        padding-top: 80px;
+    }
+    .index table caption {
+        font-size: 40px;
+    }
+    .button--pandora{
+        width: 7.2rem;
+    }
+    .button--pandora span{
+        padding: 0.5rem;
+    }
+}

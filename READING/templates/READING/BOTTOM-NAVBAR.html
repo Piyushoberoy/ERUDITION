@@ -1,0 +1,54 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/ALL.css' %}">
+{% endblock %}
+{% block title %} READING | {% block sub-title %} {% endblock %} {% endblock %}
+
+{% block body %}
+{% block content %}
+{% endblock %}
+<div class="bottom-content">
+    <footer>
+        <div class="navbar">
+            <ol>
+                {% for b in SubTopics %}
+                {% if not forloop.counter > 1 %}
+                <form action="{{b.sub_topic_title}}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" value="{{b.stopic_id.topic_id}}" id="start"
+                        name="cur-topic">{{b.sub_topic_title}}</button>
+                </form>
+                {% elif forloop.counter > 1 and not forloop.last %}
+                <form action="{{b.sub_topic_title}}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" value="{{b.stopic_id.topic_id}}"
+                        name="cur-topic">{{b.sub_topic_title}}</button>
+                </form>
+                {% else %}
+                <form action="{{b.sub_topic_title}}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" value="{{b.stopic_id.topic_id}}" id="end"
+                        name="cur-topic">{{b.sub_topic_title}}</button>
+                </form>
+                {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="navbar">
+            <ol>
+                {% for a in SubTopics|slice:":1" %}
+                {% for c in Topics %}
+                {% if c.topic_id != a.stopic_id.topic_id %}
+                <form action="{{a.sub_topic_title}}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit" value="{{c.topic_id}}" name="cur-topic">{{c.topic_title}}</button>
+                </form>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+            </ol>
+        </div>
+    </footer>
+</div>
+{% endblock %}

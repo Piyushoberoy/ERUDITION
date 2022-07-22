@@ -1,0 +1,99 @@
+.box{
+  padding-top: 200px;
+  color: white;
+}
+.box img{
+  padding: 0px;
+  height: 150px;
+  width: 150px;
+}
+
+.box h2{
+  color: rgb(255, 251, 0);
+  font-size: 45px;
+}
+
+.box input[type=text]{
+  border: none;
+  outline: none;
+  background: none;
+  color: white;
+  border-bottom: white 2px solid;
+  font-size: 18px;
+  width: 6%;
+  text-align: center;
+}
+.box button{
+  position: absolute;
+  padding: 5px;
+  width: 120px;
+  font-size: 28px;
+  font-family: 'Times New Roman', Times, serif;
+  background: transparent;
+  color: white;
+  border: 2px solid rgb(57, 221, 166);
+  cursor: pointer;
+  border-radius: 0px 24px 24px 0px;
+  transform: translate(-50%);
+  left: 50%;
+  top: 600px;
+  text-align: center;
+  transition: 1s;
+}
+.box button::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 102%;
+  background: rgb(57, 221, 166);
+  z-index: -1;
+  transition: 0.8s;
+  height: 108%;
+  border-radius: 0 20px 20px 0px;
+  top: -2px;
+  left: -1px;
+}
+.box button:hover::before{
+  width: 0%;
+}
+.box button:hover{
+color: rgb(57, 221, 166);
+}
+
+.box .Other{
+margin-top: 5px;
+position: absolute;
+background-color: rgba(255, 255, 255, 0.18);
+width: max-content;
+border-radius: 40px 40px 40px 40px;
+padding-left: 0px;
+padding-right: 0px;
+padding-top: 5px;
+padding-bottom: 4px;
+left: 50%;
+color: red;
+transform: translate(-50%);
+}
+.box a{
+color: red;
+text-decoration: none;
+padding: 5px;
+}
+.box a:hover{
+background-color: rgba(255, 255, 255, 0.2);
+}
+.box #resend{
+border-radius: 40px 0px 0px 40px;
+transition: 1s;
+}
+
+.box #another-way{
+border-radius: 0px 40px 40px 0px;
+transition: 1s;
+}
+
+@media screen and (max-width: 1200px) {
+  .box{
+      padding-top: 140px;
+  }
+}

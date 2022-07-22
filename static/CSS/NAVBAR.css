@@ -1,0 +1,411 @@
+:root{
+    --theme: rgb(9, 208, 162);
+}
+body {
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    color: black;
+    font-size: 24px;
+    font-family: 'Dancing Script', cursive;
+    margin: 0px;
+    padding: 0px;
+    transition: 0.5s;
+    user-select: none;
+    background-color: white;
+    scroll-behavior: smooth;
+}
+
+input {
+    cursor: pointer;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: 'Dancing Script', cursive;
+    font-size: 30px;
+    color: white;
+}
+
+/* ------------------------------------------NAVBAR----------------------------------------- */
+
+.dark-mode {
+    background-color: rgba(0, 0, 0);
+    color: white;
+    transition: 0.5s;
+}
+
+.dark-mode a {
+    color: white;
+}
+
+.nav {
+    transition: 0.4s;
+    font-size: 30px;
+    background-color: var(--theme);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.sub-nav {
+    margin-top: 30px;
+    padding: 10px;
+}
+
+.Erudition {
+    font-size: 100px;
+    font-family: 'Great Vibes', cursive;
+    float: left;
+    padding-top: 10px;
+    margin-bottom: -12px;
+    margin-left: 10px;
+}
+
+.nav img {
+    float: right;
+    padding: 5px;
+    margin: 6px;
+    margin-top: -10px;
+    margin-right: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: 0.4s;
+    height: 56px;
+    width: 56px;
+}
+
+.nav img:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.nav img:hover+.signout {
+    display: block;
+}
+
+.account {
+    border-radius: 50px;
+    padding: 10px;
+    transition: 0.4s;
+    float: right;
+    background-color: rgb(80, 96, 239);
+}
+
+.account:hover {
+    border-bottom: 3px white solid;
+    transition: 0.4s;
+}
+
+.about_us {
+    padding: 10px;
+    transition: 0.4s;
+    float: right;
+}
+
+.about_us:hover {
+    border-bottom: 3px white solid;
+    transition: 0.4s;
+}
+
+.grammar_check {
+    padding: 10px;
+    transition: 0.4s;
+    float: right;
+}
+
+.grammar_check:hover {
+    border-bottom: 3px white solid;
+    transition: 0.4s;
+}
+
+.dropdown {
+    float: right;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.fa-caret-down {
+    opacity: 0;
+    position: relative;
+    left: -10px;
+    transition: 0.1s;
+}
+
+.fa-caret-left {
+    opacity: 1;
+    position: relative;
+    left: 10px;
+    transition: 0.1s;
+}
+
+.dropdown .study_material {
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    margin-top: -4px;
+    float: right;
+}
+
+.dropdown button {
+    padding: 15px;
+    border-radius: 20px;
+    width: 220px;
+}
+
+.dropdown button:hover {
+    background-color: rgba(255, 255, 255, 0.305);
+    transition: 0.5s;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(9, 208, 162, 0.4);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+    margin-left: 15px;
+    font-size: 26px;
+    border-radius: 20px;
+    float: left;
+    max-width: 220px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .fa-caret-down {
+    opacity: 1;
+}
+
+.dropdown:hover .fa-caret-left {
+    opacity: 0;
+}
+
+.home {
+    padding: 10px;
+    transition: 0.1s;
+    float: right;
+}
+
+.home:hover {
+    border-bottom: 3px white solid;
+    transition: 1s;
+}
+
+.nav .icon {
+    display: none;
+}
+
+.signout {
+    position: absolute;
+    display: none;
+    transition: 0.2s;
+    width: max-content;
+    top: 85px;
+    right: 95px;
+    background-color: rgba(9, 208, 162, 0.4);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 0px 20px 20px;
+
+}
+
+.signout button {
+    padding: 8px;
+    padding-left: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    width: 130px;
+}
+
+.signout button:hover {
+    background-color: rgba(255, 255, 255, 0.305);
+    transition: 0.5s;
+}
+
+.signout:hover {
+    display: block;
+}
+
+.switch {
+    position: absolute;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+    top: 95px;
+    right: 40px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 25px;
+    width: 25px;
+    left: 0px;
+    bottom: 0.5px;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.nav input:checked+.slider {
+    background-color: rgba(18, 17, 17, 0.784);
+}
+
+.nav input:focus+.slider {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.784);
+}
+
+.nav input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(25px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+    .nav a:not(:first-child),
+    .nav button:not(:first-child),
+    .dropdown .study_material {
+        display: none;
+    }
+
+    .nav button,
+    .nav img {
+        display: none;
+    }
+
+    .nav a.icon {
+        float: right;
+        display: block;
+        margin-top: -15px;
+        margin-right: 20px;
+    }
+
+    .nav.responsive {
+        position: fixed;
+    }
+
+    .nav.responsive .icon {
+        position: absolute;
+        right: 10px;
+        top: 42px;
+        margin-top: -17px;
+    }
+
+    .nav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .nav.responsive button {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .nav.responsive img {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    .nav.responsive .signout {
+        position: relative;
+        margin-top: -90px;
+        margin-bottom: 95px;
+        left: 0px;
+        right: 0px;
+        border-radius: 0px 20px 20px 20px;
+    }
+
+    .nav.responsive .dropdown {
+        float: none;
+    }
+
+    .nav.responsive .dropdown-content {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+
+    .nav.responsive .dropdown .study_material {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    .switch {
+        top: 30px;
+        right: 70px;
+    }
+
+    .Erudition {
+        font-size: 220%;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track body {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-track .dark-mode {
+    background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

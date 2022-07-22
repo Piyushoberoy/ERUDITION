@@ -1,0 +1,66 @@
+.content{
+    padding-top: 120px;
+    text-align: justify;
+}
+.content-title{
+    text-align: center;
+}
+.content-title h1 {
+    font-size: 200%;
+    margin: 0px;
+    text-shadow: 0px 10px 20px black;
+}
+.content-context{
+    margin: 10px;
+}
+.content-context h2 {
+    text-align: center;
+}
+
+
+
+
+.bottom-content footer{
+    padding-bottom: 5px;
+}
+.bottom-content footer .navbar ol {
+    text-align: center;
+    background-color: var(--theme);
+    height: 40px;
+}
+
+.bottom-content footer form{
+    display: inline-block;
+    margin-top: -8px;
+}
+
+.bottom-content footer button {
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--theme);
+    color: white;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.bottom-content footer button:hover {
+    padding: 20px;
+    margin-top: -20px;
+    transition: 0.5s;
+}
+
+.bottom-content #start {
+    border-radius: 20px 5px 5px 20px;
+}
+
+.bottom-content #end {
+    border-radius: 5px 20px 20px 5px;
+}
+
+@media screen and (max-width:1200px) {
+    .content{
+        padding-top: 80px;
+    }
+}

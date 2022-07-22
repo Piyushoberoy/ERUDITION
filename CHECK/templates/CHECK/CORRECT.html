@@ -1,0 +1,25 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/CORRECT.css' %}">
+{% endblock %}
+{% block title %} CHECK {% endblock %}
+
+{% block body %}
+<div class="correct-content">
+    <div class="correct-content-title">
+        <h1>Yeah, we got it!&#129395;</h1>
+    </div>
+    <div class="correct-content-context">
+        <div class="Original-text">
+            <h2>Original Text:-</h3>
+                {{org}}
+        </div>
+
+        <div class="Correct-text">
+            <h2 id="correct-text">Correct Text:-</h3>
+                {{text}}
+        </div>
+    </div>
+</div>
+{% endblock %}

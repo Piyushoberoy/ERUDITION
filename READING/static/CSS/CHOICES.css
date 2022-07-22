@@ -1,0 +1,205 @@
+
+header{
+  text-align: center;
+  font-size: 6.6rem;
+  font-family: Algerian;
+  color: white;
+  -webkit-animation:colorchange 20s infinite;
+}
+  
+@-webkit-keyframes colorchange {
+  0% {
+    color: rgb(122, 186, 238);
+  }
+    
+  10% {
+    color: #b26ad1;
+  }
+    
+  20% {
+    color: #1abc9c;
+  }
+    
+  30% {
+    color: #d35400;
+  }
+    
+  40% {
+    color: rgb(233, 119, 227);
+  }
+    
+  50% {
+    color: #43cc8c;
+  }
+    
+  60% {
+    color: rgb(204, 94, 145);
+  }
+    
+  70% {
+    color: #29a3b9;
+  }
+  80% {
+    color: #f1dd8df6;
+  }
+    
+  90% {
+    color: #52b3d1;
+  }
+    
+  100% {
+    color: pink;
+  }
+}
+  
+a{
+  text-decoration: none;
+  color: white;
+}
+  
+img{
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.4s;
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  right: 45px;
+  top: 30px;
+}
+img:hover{
+  background: rgba(255, 255, 255, 0.18);
+}
+  
+img:hover + .signup-signin{
+  display: block;
+    
+}
+img:hover + .signout{
+  display: block;
+    
+}
+  
+.signup-signin{
+  position: absolute;
+  display: none;
+  transition: 0.2s;
+  width: max-content;
+  border-radius: 50px;
+  top: 124px;
+  right: 4px;
+}
+  
+.signup-signin button{
+  padding: 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);;
+  cursor: pointer;
+  color: white;
+  font-family: "montserrat";
+  font-size: 24px;
+}
+
+.signup-signin:hover{
+  display: block;
+}
+  
+.signout{
+  position: absolute;
+  display: none;
+  transition: 0.2s;
+  width: max-content;
+  border-radius: 50px;
+  top: 124px;
+  right: 34px;
+}
+
+.signout button{
+  padding: 8px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.18);;
+  cursor: pointer;
+  color: white;
+  font-family: "montserrat";
+  font-size: 24px;
+}
+  
+.signout:hover{
+  display: block;
+}
+
+.CONTENT{
+  position: absolute;
+  left: 50%;
+  top: 300px;
+  transform: translate(-50%);
+}
+
+.READING {
+  width: 300px;
+  height: 220px;
+  background-image: url('../IMAGES/READING.jpg');
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: 0.6s;
+  position: absolute;
+  right: 5px;
+  top: 0px;
+}
+#READING{
+  font-size: 24px;
+  display: none;
+  transition: 1s;
+  position: absolute;
+  top: 80px;
+  right: 305px;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 100px 0px 0px 100px;
+  padding: 10px;
+}
+.READING:hover {
+  background-image: url('../IMAGES/READING.gif');
+  box-shadow: 0px 20px rgba(255, 255, 255, 0.18);
+  top: -15px;
+}
+
+.READING:hover + #READING{
+  display: block;
+}
+.VIDEO {
+  width: 300px;
+  height: 220px;
+  background-image: url('../IMAGES/VIDEO.jpg');
+  background-position: -80px;
+  background-size: cover;
+  cursor: pointer;
+  border-radius: 40px;
+  transition: 0.6s;
+  position: absolute;
+  left: 5px;
+  top: 0px;
+}
+#VIDEO{
+  font-size: 24px;
+  display: none;
+  transition: 1s;
+  position: absolute;
+  top: 80px;
+  left: 305px;
+  background-color: rgba(255, 255, 255, 0.18);
+  border-radius: 0px 100px 100px 0px;
+  padding: 10px;
+}
+.VIDEO:hover {
+  background-image: url('../IMAGES/VIDEO.gif');
+  box-shadow: 0px 20px rgba(255, 255, 255, 0.18);
+  background-size: cover;
+  background-position: -80px;
+  top: -15px;
+}
+.VIDEO:hover + #VIDEO{
+  transition-delay: 2s;
+  display: block;
+}

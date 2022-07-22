@@ -1,0 +1,117 @@
+@-webkit-keyframes colorchange {
+  0% {
+
+    color: rgb(122, 186, 238);
+  }
+
+  10% {
+
+    color: #b26ad1;
+  }
+
+  20% {
+
+    color: #1abc9c;
+  }
+
+  30% {
+
+    color: #d35400;
+  }
+
+  40% {
+
+    color: rgb(233, 119, 227);
+  }
+
+  50% {
+
+    color: #43cc8c;
+  }
+
+  60% {
+
+    color: rgb(204, 94, 145);
+  }
+
+  70% {
+
+    color: #29a3b9;
+  }
+
+  80% {
+
+    color: #f1dd8df6;
+  }
+
+  90% {
+
+    color: #52b3d1;
+  }
+
+  100% {
+
+    color: pink;
+  }
+}
+
+.correct-content {
+  padding-top: 120px;
+}
+
+.correct-content h1 {
+  font-size: 40px;
+  margin: 0px;
+  margin-top: 10px;
+  -webkit-animation: colorchange 20s infinite;
+  text-shadow: 0px 10px 20px var(--theme);
+}
+
+.correct-content h2 {
+  color: red;
+}
+
+.correct-content-context {
+  color: rgb(0, 162, 255);
+}
+
+/* ------------------------------------------ ORIGINAL TEXT ----------------------------------------- */
+
+.correct-content-context .Original-text {
+  float: left;
+  width: 49%;
+}
+
+/* ------------------------------------------ CORRECT TEXT ----------------------------------------- */
+
+.correct-content-context .Correct-text {
+  float: left;
+  text-align: center;
+  width: 50%;
+}
+
+.correct-content-context #correct-text {
+  color: rgb(86, 226, 110);
+}
+
+/* ------------------------------------------DEVICE SETTINGS----------------------------------------- */
+
+@media screen and (max-width: 1200px) {
+  .correct-content {
+    padding-top: 80px;
+  }
+
+  .correct-content h1 {
+    text-align: center;
+    font-size: 36px;
+  }
+
+  .correct-content h2 {
+    font-size: 30px;
+  }
+
+  .correct-content-context .Original-text,
+  .correct-content-context .Correct-text {
+    width: 100%;
+  }
+}

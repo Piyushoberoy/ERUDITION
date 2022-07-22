@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		body {
+			text-align: center;
+			/* background-image: url("../IMAGES/BG.jpeg"); */
+			/* background-color: black; */
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-attachment: fixed;
+			color: black;
+			font-size: 24px;
+			font-family: 'Dancing Script', cursive;
+			margin: 0px;
+			padding: 0px;
+			transition: 0.5s;
+			user-select: none;
+			background-color: white;
+		}
+
+		input {
+			cursor: pointer;
+		}
+
+		a {
+			color: white;
+			text-decoration: none;
+		}
+
+		.dark-mode {
+			background-color: rgba(0, 0, 0);
+			color: white;
+			transition: 0.5s;
+		}
+
+		.dark-mode a {
+			color: white;
+		}
+
+		.nav {
+			transition: 0.4s;
+			overflow: hidden;
+			font-size: 30px;
+			background-color: rgb(9, 208, 162);
+			position: fixed;
+			width: 100%;
+			z-index: 1;
+		}
+
+		.sub-nav {
+			margin-top: 30px;
+			padding: 10px;
+		}
+
+		.Erudition {
+			font-size: 7.5rem;
+			font-family: 'Great Vibes', cursive;
+			float: left;
+			margin-top: 10px;
+			margin-bottom: -12px;
+			margin-left: 10px;
+		}
+
+		.account {
+			border-radius: 50px;
+			padding: 10px;
+			transition: 0.4s;
+			float: right;
+			background-color: rgb(80, 96, 239);
+		}
+
+		.account:hover {
+			border-bottom: 3px white solid;
+			transition: 0.4s;
+		}
+
+		.about_us {
+			padding: 10px;
+			transition: 0.4s;
+			float: right;
+		}
+
+		.about_us:hover {
+			border-bottom: 3px white solid;
+			transition: 0.4s;
+		}
+
+		.grammar_check {
+			padding: 10px;
+			transition: 0.4s;
+			float: right;
+		}
+
+		.grammar_check:hover {
+			border-bottom: 3px white solid;
+			transition: 0.4s;
+		}
+
+		.dropdown {
+			float: right;
+			overflow: hidden;
+			cursor: pointer;
+		}
+
+		.fa-caret-down {
+			opacity: 0;
+			position: relative;
+			left: -10px;
+			transition: 0.1s;
+		}
+
+		.fa-caret-left {
+			opacity: 1;
+			position: relative;
+			left: 10px;
+			transition: 0.1s;
+		}
+
+		.dropdown .study_material {
+			border: none;
+			outline: none;
+			color: white;
+			padding: 14px 16px;
+			background-color: inherit;
+			margin-top: -4px;
+			float: right;
+		}
+
+		.dropdown-content {
+			display: none;
+			position: absolute;
+			background-color: rgba(9, 208, 162, 0.4);
+			min-width: 160px;
+			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+			margin-top: 50px;
+			margin-left: 15px;
+			font-size: 26px;
+			border-radius: 20px;
+		}
+
+		.dropdown-content a {
+			padding: 10px;
+			text-decoration: none;
+			display: block;
+			text-align: center;
+			border-radius: 20px;
+		}
+
+		.dropdown-content a:hover {
+			background-color: rgba(221, 221, 221, 0.485);
+			color: white;
+		}
+
+		.dropdown:hover .dropdown-content {
+			display: block;
+		}
+
+		.dropdown:hover .fa-caret-down {
+			opacity: 1;
+		}
+
+		.dropdown:hover .fa-caret-left {
+			opacity: 0;
+		}
+
+		.home {
+			padding: 10px;
+			transition: 0.1s;
+			float: right;
+		}
+
+		.home:hover {
+			border-bottom: 3px white solid;
+			transition: 1s;
+		}
+
+		.nav .icon {
+			display: none;
+		}
+
+		.switch {
+			position: absolute;
+			display: inline-block;
+			width: 60px;
+			height: 34px;
+			top: 105px;
+			right: 40px;
+		}
+
+		.switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: white;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 26px;
+			width: 26px;
+			left: 4px;
+			bottom: 4px;
+			background-color: #ccc;
+			-webkit-transition: .4s;
+			transition: .4s;
+		}
+
+		input:checked+.slider {
+			background-color: rgba(18, 17, 17, 0.784);
+		}
+
+		input:focus+.slider {
+			box-shadow: 0 0 1px rgba(0, 0, 0, 0.784);
+		}
+
+		input:checked+.slider:before {
+			-webkit-transform: translateX(26px);
+			-ms-transform: translateX(26px);
+			transform: translateX(26px);
+		}
+
+		.slider.round {
+			border-radius: 34px;
+		}
+
+		.slider.round:before {
+			border-radius: 50%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav" id="nav">
+		<a href="#" class="Erudition">Erudition</a>
+		<label class="switch">
+			<input type="checkbox" name="checkbox">
+			<span class="slider round"></span>
+		</label>
+		<div class="sub-nav">
+			<a></a>
+			<a href="#" class="account">Join now</a>
+			<a href="#" class="about_us">About us</a>
+			<a href="#" class="grammar_check">Grammar check</a>
+			<div class="dropdown">
+				<a class="study_material">Study Material
+					<i class="fa fa-caret-left"></i>
+					<i class="fa fa-caret-down"></i>
+				</a>
+				<div class="dropdown-content">
+					<a href="#">Video Lectures</a>
+					<a href="#">Reading Material</a>
+				</div>
+			</div>
+			<a href="#" class="home">Home</a>
+			<a href="javascript:void(0);" class="icon" onclick="myFunction()">
+				<i class="fa fa-bars"></i>
+			</a>
+		</div>
+
+</body>
+
+</html>

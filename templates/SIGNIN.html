@@ -1,0 +1,42 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/CREDENTIALS.css' %}">{% endblock %}
+{% block title %} HOME {% endblock %}
+
+{% block body %}
+<div class="box">
+    <div class="loginbox">
+    <img src="{% static 'IMAGES/USER.png' %}">
+    <form method="POST" action="{% url 'SIGNIN' %}">
+        {%csrf_token %}
+        <!-- {% if messages %}
+                {% for message in messages %}
+                <div>
+                    {{msg}}
+                </div>
+                {% endfor %}
+                {% endif %} -->
+        {% if messages %}
+        {% for message in messages %}
+        <strong>{{message}}</strong>
+        <button type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        {% endfor %}
+        {% endif %}
+        <p> Username </p>
+        <input type="text" name="u_name" placeholder="" required>
+        <p> Password </p>
+        <input type="password" name="password" placeholder="" required><br>
+        <br>
+        <input type="submit" value="Login">
+        <a href="{% url 'FORGOT_PASSWORD' %}"> Forget Password</a><br>
+        <br>
+        <a href="{% url 'SIGNUP' %}">Don't have an account ? </a>
+        <br>
+        <br>
+    </form>
+</div>
+</div>
+{% endblock %}

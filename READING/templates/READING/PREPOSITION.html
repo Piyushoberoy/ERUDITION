@@ -1,0 +1,117 @@
+{% extends 'READING/BOTTOM-NAVBAR.html' %}
+{% block sub-title %} PREPOSITION {% endblock %}
+
+{% block content %}
+<div class="content">
+	<div class="content-title">
+		<h1> PREPOSITION </h1>
+		<p>A preposition is a word placed before Noun or a Pronoun to show in what relation the person or thing denoted by it stands in regard to something else.</p>
+	</div>
+
+	<div class="content-context">
+		<div class="example">
+			Tanya is girlfriend of Abhinav who lives at Picadely Square. They both meet at Garden of Fragrance, she loves to talk with Abhinav.
+		</div>
+
+		<!-- ----------------------------------------------------------TYPES---------------------------------------------------------- -->
+
+		<div class="types">
+			<ol type="1">Types of preposition:-
+				<li>Simple Preposition</li>
+				<li>Compound Preposition</li>
+				<li>Phrase Preposition</li>
+				<li>Participal Preposition</li>
+				<li>Double Preposition</li>
+			</ol>
+		</div>
+
+		<!-- ----------------------------------------------------------TYPE---------------------------------------------------------- -->
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Simple Preposition:-</h3>
+				<p>Simple prepositions are common words such as at, for, in, off, on, over, and under.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>He sat <u><b>on</b></u> the chair.</li>
+					<li>There is some milk <u><b>in</b></u> the fridge.</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Compound Preposition:-</h3>
+				<p>Compound prepositions (also called complex prepositions) consist of two or more words, usually a simple preposition and another word, to convey location. Some examples are in addition to, on behalf of, and in the middle of.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>We were <u><b>in the middle of</b></u> the storm.</li>
+					Here "in the middle of" is coveying location of people in storm.
+					<li>My car is parked <u><b>in front of</b></u> the mailbox.</li>
+					Here "in front of" is coveying location of car.
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Phrase Preposition:-</h3>
+				<p>Prepositional phrases are groups of words that include a preposition, an object and the object's modifier. Examples include phrases like on time, at home, before class, and on the floor.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>We hiked <u><b>through the forest</b></u>.</li>
+					<li>The baseball game was canceled <u><b>after the heavy rain</b></u>.</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Participal Preposition:-</h3>
+				<p>Participal prepositions have endings such as -ed and -ing, just like participial adjectives. Examples of participle prepositions include considering, during, concerning, and provided.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>She is interested in anything <u><b>concerning</b></u> horses.</li>
+					<li><u><b>Considering</b></u> his age, he did a great job.</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Double Preposition:-</h3>
+				<p>Double prepositions are two simple prepositions used together, often indicating direction. Some examples include into, upon, onto, out of, and without.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>Once <u><b>upon</b></u> a time, there was a beautiful princess.</li>
+					<li>The baby climbed <u><b>onto</b></u> the table.</li>
+				</ol>
+			</div>
+		</div>
+
+	</div>
+</div>
+<script>
+	function getOption(x) {
+		if (document.getElementById("correct").checked == true) {
+			console.log("Correct");
+			document.getElementById("cr").style.backgroundColor = "#59F6A1";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+
+		}
+		else {
+			console.log("Wrong");
+			// document.body.style.backgroundColor = "White"
+			document.getElementById("cr").style.backgroundColor = "red";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+		}
+	}
+</script>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/VERIFY.CSS' %}" />{% endblock %}
+{% block title %} HOME {% endblock %}
+
+{% block body %}
+<div class="box">
+    <form method="POST" action="{% url 'VERIFY' %}">{% csrf_token %}
+        <h2>Verify yourself</h2>
+
+        <img src="{% static 'IMAGES/VERIFY.png' %}"><br>
+
+        <h4>Erudition sent an OTP to your registered email.</h4>
+
+        <div class="error"></div>
+
+        OTP:&nbsp; <input type="text" name="OTP" placeholder="A2g456"><br>
+        <br>
+
+        <div class="Other">
+            <b><a href="#" id="resend">Didn't recieved resend</a> | <a href="#" id="another-way">Try another way</a></b>
+        </div>
+
+        <button>Next</button>
+    </form>
+</div>
+
+{% endblock %}

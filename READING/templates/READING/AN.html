@@ -1,0 +1,76 @@
+{% extends 'READING/BOTTOM-NAVBAR.html' %}
+{% block sub-title %} AN {% endblock %}
+
+{% block content %}
+<div class="content">
+	<div class="content-title">
+		<h1> AN </h1>
+		<p>Conjunction is word which joins together sentences and sometimes words</p>
+	</div>
+
+	<div class="content-context">
+		<div class="example">
+			Tanya is best friend of Abhinav and they both are more than a best a friend.
+		</div>
+
+		<!-- ----------------------------------------------------------TYPES---------------------------------------------------------- -->
+
+		<div class="types">
+			<ol type="1">Types of Conjunction:-
+				<li>Co-ordinating Conjunctions</li>
+				<li>Sub-ordinating Conjunctions</li>
+			</ol>
+		</div>
+
+		<!-- ----------------------------------------------------------TYPE---------------------------------------------------------- -->
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Co-ordinating Conjunctions:-</h3>
+				<p>Those words which join two separate sentences.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>He is poor <u><b>but</b></u> he is charitable.</li>
+					Here "but" is co-ordinate conjunction as it is combining two separate sentences i.e., "he is poor" and another one "he is charitable".
+					<li>He came <u><b>and</b></u> helped me.</li>
+					Here "and" is co-ordinate conjunction as it is combining two separate sentences i.e., "he came" and another one "he helped me".
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Sub-ordinating Conjunctions:-</h3>
+				<p>A subordinating conjunction is a word or phrase that links a dependent clause to an independent clause. </p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>He came here <u><b>after</b></u> I went away.</li>
+					Here "after" is Sub-ordinate conjunction, since dependent clause "he came here" links with independent clause "I went away".
+					<li>He failed <u><b>although</b></u> he worked hard</li>
+					Here "although" is Sub-ordinate conjunction.
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function getOption(x) {
+		if (document.getElementById("correct").checked == true) {
+			console.log("Correct");
+			document.getElementById("cr").style.backgroundColor = "#59F6A1";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+
+		}
+		else {
+			console.log("Wrong");
+			// document.body.style.backgroundColor = "White"
+			document.getElementById("cr").style.backgroundColor = "red";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+		}
+	}
+</script>
+{% endblock %}

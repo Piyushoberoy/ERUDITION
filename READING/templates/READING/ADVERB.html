@@ -1,0 +1,120 @@
+{% extends 'READING/BOTTOM-NAVBAR.html' %}
+{% block sub-title %} ADVERB {% endblock %}
+
+{% block content %}
+<div class="content">
+	<div class="content-title">
+		<h1> ADVERB </h1>
+		<p>The adverb is a word which modifies the meaning of a verb, an adjective, or another Adverb; as, quickly, late, soon, before, always.</p>
+	</div>
+
+	<div class="content-context">
+		<div class="example">
+			Reeta is the name of my neighbour's granddaughter, she loves to play football with me. Whenever Reeta saw a herd of elephants she felt very excited and always plea her grandfather to make a ride of it.
+		</div>
+
+		<!-- ----------------------------------------------------------TYPES---------------------------------------------------------- -->
+
+		<div class="types">
+			<ol type="1">Types of adverb:-
+				<li>Simple Adverbs</li>
+				<li>Interrogative Adverbs</li>
+				<li>Introductory Adverbs</li>
+				<li>Relative Adverbs</li>
+				<li>Demonstrative Adverbs</li>
+			</ol>
+		</div>
+
+		<!-- ----------------------------------------------------------TYPE---------------------------------------------------------- -->
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Simple Adverbs:-</h3>
+				<p>Simple Adverbs contain only one word and they are the most used Adverbs.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>I am visiting my grandmother <u><b>this</b></u> weekend.</li>
+					Here, "this" is pointing towards that particular weekend.
+					<li>The flowers on her balcony are <u><b>extremely</b></u> beautiful.</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Interrogative Adverbs:-</h3>
+				<p>It is an adverb that asks a question about place, time, manner, or reason.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li><u><b>Where</b></u> do you live?</li>
+					<li><u><b>When</b></u> are you moving</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Introductory Adverbs:-</h3>
+				<p>Adverbs that come at the beginning of a sentence are called introductory adverbs.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li><u><b>Tomorrow</b></u> I shall go there.</li>
+					<li><u><b>Always</b></u> you are welcome.</li>
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Relative Adverbs:-</h3>
+				<p>The relative adverbs are "where," "when," and "why." A relative adverb is an adverb that heads an adjective clause.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>I know the town <u><b>where</b></u> you live.</li>
+					Here "where" introduces an adjective clause describing a place.
+					<li>They're talking about an era <u><b>when</b></u> a promise was a promise.</li>
+					Here "when" introduces an adjective clause describing a time.
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Demonstrative Adverbs:-</h3>
+				<p>It express various information including time, location, manner or degree.
+				</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>Give me <u><b>that</b></u> blue water bottle.</li>
+					Here, "that" demonstrates that he/her needs blue water bottle.
+					<li><u><b>This</b></u> time I won't fail you.</li>
+					Here, "this" demonstrates that the person would not fail at him.
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function getOption(x) {
+		if (document.getElementById("correct").checked == true) {
+			console.log("Correct");
+			document.getElementById("cr").style.backgroundColor = "#59F6A1";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+
+		}
+		else {
+			console.log("Wrong");
+			// document.body.style.backgroundColor = "White"
+			document.getElementById("cr").style.backgroundColor = "red";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+		}
+	}
+</script>
+{% endblock %}

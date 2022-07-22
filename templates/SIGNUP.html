@@ -1,0 +1,57 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/CREDENTIALS.css' %}">{% endblock %}
+{% block title %} SIGNUP {% endblock %}
+
+{% block body %}
+<div class="box">
+<div class="loginbox">
+    <img src="{% static 'IMAGES/USER.png' %}">
+    <form method="POST" action="{% url 'SIGNUP' %}">{%csrf_token %}
+        <!-- {% if messages %}
+                {% for message in messages %}
+                <div>
+                    {{msg}}
+                </div>
+                {% endfor %}
+                {% endif %} -->
+        <p> FIRST NAME </p>
+        <input type="text" name="f_name" placeholder="" required>
+        <p> LAST NAME </p>
+        <input type="text" name="l_name" placeholder="" required>
+        {% if messages %}
+        {% for message in messages %}
+        <div>
+            {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        <p> USERNAME </p>
+        <input type="text" name="u_name" placeholder="" required>
+        <p> EMAIL </p>
+        <input type="email" name="email" placeholder="" required>
+        <div id="error"></div>
+        <p> PASSWORD </p>
+        <input type="password" name="password" placeholder="" required>
+        <br>
+        <!-- {% if messages %}
+            {% for message in messages %}
+            <div>
+                {{pswd_msg}}
+            </div>
+            {% endfor %}
+            {% endif %} -->
+        <p> CONFIRM PASSWORD </p>
+        <input type="password" name="confirm_password" placeholder="" required>
+        <br>
+        <input type="submit" value="REGISTER">
+    </form>
+
+    <form action="{% url 'SIGNIN' %}" method="post">{%csrf_token %}
+        <input type="submit" value="SIGNIN">
+    </form>
+
+</div>
+</div>
+{% endblock %}

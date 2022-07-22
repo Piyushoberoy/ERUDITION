@@ -1,0 +1,247 @@
+<!-- {% load static %} -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Material | Video Lectures</title>
+  <link rel="shortcut icon" href="{% static 'IMAGES/LOGO.png' %}">
+  <link rel="stylesheet" type="text/css" href="../static/CSS/test.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- <link rel="icon" href="../static/IMAGES/LOGO.png"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../static/CSS/test.css"> -->
+</head>
+
+<body>
+  <!--  --------------------------------------NAVBAR--------------------------------------  -->
+
+  <!-- {% csrf_token %} -->
+  <div class="nav" id="nav">
+    <a href="{% url 'HOME' %}" class="Erudition">Erudition</a>
+    <label class="switch">
+      <input type="checkbox" name="checkbox">
+      <span class="slider round"></span>
+    </label>
+    <div class="sub-nav">
+      <a></a>
+      <!-- {% if user.is_authenticated %} -->
+      <img src="../static/IMAGES/ACCOUNT.png" alt="profile">
+      <!-- <img src="{% static 'IMAGES/ACCOUNT.png' %}" alt="profile"> -->
+      <div class="signout" method="post">
+        <button>{{person}}</button>
+        <form action="{% url 'SIGNOUT' %}" method="post">
+          <!-- {% csrf_token %} -->
+          <button>Sign out</button>
+        </form>
+      </div>
+      <!-- {% else %} -->
+      <form action="{% url 'SIGNIN' %}" method="post">
+        <!-- {% csrf_token %} -->
+        <button class="account">Join now</button>
+      </form>
+      <!-- {% endif %} -->
+      <a href="{% url 'HOME' %}" class="about_us">Contact Us</a>
+      <form action="/check/" method="post">
+        <!-- {% csrf_token %} -->
+        <button class="grammar_check">Grammar check</button>
+      </form>
+      <div class="dropdown">
+        <a class="study_material">Study Material
+          <i class="fa fa-caret-left"></i>
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <form action="/content/video/" method="post">
+            <!-- {% csrf_token %} -->
+            <button>Video Lectures</button>
+          </form>
+          <form action="/content/reading/" method="post">
+            <!-- {% csrf_token %} -->
+            <button>Reading Material</button>
+          </form>
+        </div>
+      </div>
+      <a href="{% url 'HOME' %}" class="home">Home</a>
+      <!-- <a></a> -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+  </div>
+  <!-- {% if messages %}
+  {% for message in messages %}
+  <strong>{{message}}</strong>
+  <button type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  {% endfor %}
+  {% endif %} -->
+
+  <!--  --------------------------------------MAIN TOPIC NAVBAR--------------------------------------  -->
+
+  <div class="main-topic-nav" id="main-topic-nav">
+    <div class="main-topic-nav-title">Index</div>
+    <form action="" method="post">
+      <!-- {% csrf_token %} -->
+      <div class="main-topic-nav-content">
+        <!-- {% for i in Topics%} -->
+        <button value={{i}} name="main-topic">{{i.topic_title}}</button><br>
+        <!-- {% endfor %} -->
+      </div>
+    </form>
+  </div>
+  <div class="closing-button main" id="closing-button-main">
+    <button onclick="hide('main-topic-nav','main-mutable','','closing-button-main')"><i class="fas fa-angle-left" id="main-mutable"></i></button>
+  </div>
+
+  <!--  --------------------------------------VIDEO WINDOW--------------------------------------  -->
+
+  <div class="video-window" id="video-window">
+    <div class="video-window-title">{{video.title}} :</div>
+    <div class="video-window-video"><video src="../VIDEO/PARTS-OF-SPEECH/VIDEOS/Phulkari__Karan_Randhawa_4K_60FPS.mkv" id="video" height="100%" width="100%" controls></video>
+    <!-- <div class="video-window-video"><video src="/{{video.video}}" id="video" height="100%" width="100%"
+        controls></video> -->
+    </div>
+  </div>
+
+  <!--  ------------------------------------------SUB TOPIC NAVBAR--------------------------------------------  -->
+
+  <div class="sub-topic-nav" id="sub-topic-nav">
+    <button><i class="fas fa-angle-left" id="left"></i></button>
+    <button style="float: right;" id="right"><i class="fas fa-angle-right"></i></button>
+    <form action="" method="post">
+      <!-- {% csrf_token %} -->
+      <div class="sub-topic-nav-content" id="sub-topic-nav-content">
+        <!-- {% for i in Videos%} -->
+        <button type="submit" value={{i}} name="sub-topic"><img src="/{{i.image}}" alt=""></button>
+        <!-- {% endfor %} -->
+      </div>
+    </form>
+  </div>
+  <div class="closing-button sub" id="sub">
+    <button onclick="hide('sub-topic-nav','sub-mutable','sub',this)"><i class="fas fa-angle-down"
+        id="sub-mutable"></i></button>
+  </div>
+
+  <!--  --------------------------------------JAVASCRIPT--------------------------------------  -->
+
+  <script>
+    var checkbox = document.querySelector("input[name=checkbox]");
+
+    checkbox.addEventListener('change', mode);
+
+    function mode() {
+      var x = document.querySelector("a");
+      var y = document.body;
+      y.classList.toggle("dark-mode");
+    }
+
+    function myFunction() {
+      var x = document.getElementById("nav");
+      var y = document.getElementById("closing-button-main");
+      var bn = document.getElementById("sub-topic-nav");
+      var bb = document.getElementById("sub");
+      if (x.className === "nav") {
+        x.className += " responsive";
+        y.style.display="none";
+        if ((screen.width > 780) && (screen.width <= 1200)) {
+          bn.style.bottom = "-300px";
+          bb.style.bottom = "-200px";
+        }
+        else {
+          bn.style.bottom = "0px";
+          bb.style.bottom = "100px";
+        }
+      } else {
+        x.className = "nav";
+        y.style.display="block";
+        bn.style.bottom = "0px";
+        bb.style.bottom = "100px";
+      }
+    }
+
+    function hide(X, Y, Z, sp) {
+      var x = document.getElementById(X);
+      var y = document.getElementById(Y);
+      var z = document.getElementById(Z);
+      var Sp = document.getElementById(sp);
+      if (X === "main-topic-nav") {
+        if (x.style.marginLeft === "-230px") {
+          x.style.marginLeft = "0px";
+          y.className = "fas fa-angle-left";
+          x.style.transition = "0.5s";
+          document.getElementById("video-window").style.width="80%";
+          if (Sp.style.position === ""){
+            Sp.style.transition = "0.64s";
+            Sp.style.left = "135px";
+            if (screen.width <=320){
+              Sp.style.left = "125px";
+            }
+          }
+        }
+        else {
+          x.style.marginLeft = "-230px";
+          y.className = "fas fa-angle-right";
+          x.style.transition = "0.82s";
+          document.getElementById("video-window").style.width="90%";
+          if (Sp.style.position === ""){
+            Sp.style.transition = "0.5s";
+            Sp.style.left = "0px";
+          }
+        }
+      }
+      else if (X === "sub-topic-nav") {
+        if (x.style.height === "100px" && x.style.visibility === "hidden") {
+          x.style.height = "90px";
+          x.style.bottom = "0px";
+          x.style.padding = "20px";
+          x.style.paddingTop = "10px";
+          y.className = "fas fa-angle-down";
+          z.style.bottom = "100px";
+          sp.style.borderRadius = "50%";
+          x.style.visibility = "visible";
+        }
+        else {
+          x.style.height = "100px";
+          x.style.bottom = "60px";
+          x.style.padding = "0px";
+          y.className = "fas fa-angle-up";
+          z.style.bottom = "0px";
+          sp.style.borderRadius = "50% 50% 0% 0%";
+          x.style.visibility = "hidden";
+        }
+      }
+    }
+
+    (function (window) {
+      function setupVideo() {
+        var v = document.getElementById('video');
+        v.addEventListener('mouseover', function () { this.controls = true; }, false);
+        v.addEventListener('mouseout', function () { this.controls = false; }, false);
+      }
+
+      window.addEventListener('load', setupVideo, false);
+    })(window);
+
+    const buttonRight = document.getElementById('right');
+    const buttonLeft = document.getElementById('left');
+
+    buttonRight.onclick = function () {
+      document.getElementById("sub-topic-nav-content").scrollLeft += 127;
+    };
+    buttonLeft.onclick = function () {
+      document.getElementById('sub-topic-nav-content').scrollLeft -= 127;
+    };
+    if (screen.width<=882){
+      hide('main-topic-nav','main-mutable','',this);
+      document.getElementById("video-window").style.width="90%";
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+Hello,
+Please use the verification code below on the Arengu website:
+{{VERIFICATION_CODE}}
+If you didn't request this, you can ignore this email or let us know.
+Thanks!
+Arengu team

@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %} {% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'CSS/NAVBAR.css' %}">
+  <link rel="shortcut icon" href="{% static 'IMAGES/LOGO.png' %}">
+  {% block static %} {% endblock %}
+</head>
+
+<body>
+  <!--  --------------------------------------NAVBAR--------------------------------------  -->
+
+  {% csrf_token %}
+  <div class="nav" id="nav">
+    <a href="{% url 'HOME' %}" class="Erudition">Erudition</a>
+    <label class="switch">
+      <input type="checkbox" name="checkbox">
+      <span class="slider round"></span>
+    </label>
+    <div class="sub-nav">
+      <a></a>
+      {% if user.is_authenticated %}
+      <img src="{% static 'IMAGES/ACCOUNT.png' %}" alt="profile">
+      <div class="signout" method="post">
+        <button>{{person}}</button>
+        <form action="{% url 'SIGNOUT' %}" method="post">
+          {% csrf_token %}
+          <button>Sign out</button>
+        </form>
+      </div>
+      {% else %}
+      <form action="{% url 'SIGNIN' %}" method="post">
+        {% csrf_token %}
+        <button class="account">Join now</button>
+      </form>
+      {% endif %}
+      <a href="{% url 'HOME' %}" class="about_us" id="change-link1">Contact Us</a>
+      <form action="/check/" method="post">
+        {% csrf_token %}
+        <button class="grammar_check">Grammar check</button>
+      </form>
+      <div class="dropdown">
+        <a class="study_material">Study Material
+          <i class="fa fa-caret-left"></i>
+          <i class="fa fa-caret-down"></i>
+        </a>
+        <div class="dropdown-content">
+          <form action="/content/video/">
+            <button>Video Lectures</button>
+          </form>
+          <form action="/content/reading/" method="post">
+            {% csrf_token %}
+            <button>Reading Material</button>
+          </form>
+        </div>
+      </div>
+      <a href="{% url 'HOME' %}" class="home" id="change-link2">Home</a>
+      <!-- <a></a> -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    {% if messages %}
+    {% for message in messages %}
+    <strong>{{message}}</strong>
+    <button type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {% endfor %}
+    {% endif %}
+  </div>
+
+  {% block body %} {% endblock %}
+<!--  --------------------------------------JAVASCRIPT--------------------------------------  -->
+
+<script>
+    var checkbox = document.querySelector("input[name=checkbox]");
+
+    checkbox.addEventListener('change', mode);
+
+    function mode() {
+      var x = document.querySelector("a");
+      var y = document.body;
+      y.classList.toggle("dark-mode");
+    }
+
+    function myFunction() {
+      var x = document.getElementById("nav");
+      if (x.className === "nav") {
+        x.className += " responsive";
+      } else {
+        x.className = "nav";
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+{% extends 'READING/BOTTOM-NAVBAR.html' %}
+{% block sub-title %} VERB {% endblock %}
+
+{% block content %}
+<div class="content">
+	<div class="content-title">
+		<h1> VERB </h1>
+		<p>Averb is a word that tells or asserts something about a person or thing.</p>
+	</div>
+
+	<div class="content-context">
+		<div class="example">
+			Reeta is the name of my neighbour's granddaughter, she loves to play football with me. Whenever Reeta saw a herd of elephants she felt very excited and always plea her grandfather to make a ride of it.
+		</div>
+
+		<!-- ----------------------------------------------------------TYPES---------------------------------------------------------- -->
+
+		<div class="types">
+			<ol type="1">Types of verb:-
+				<li>Finite verbs</li>
+				<li>Infinite verbs</li>
+			</ol>
+		</div>
+
+		<!-- ----------------------------------------------------------TYPE---------------------------------------------------------- -->
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Finite verbs:-</h3>
+				<p>Finite verbs are those verbs which need a subject and can form a sentence with the aid of another verb.</p>
+			</div>
+
+			<div class="type-example">
+				<ol type="a">
+					<li>We <u><b>rob</b></u> banks.</li>
+					Here "rob" is finite verb.
+					<li>I <u><b>know</b></u> how to whistle.</li>
+					Here "know" is finit verb.
+				</ol>
+			</div>
+		</div>
+		This thing will be more clear soon.
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Infinite verbs:-</h3>
+				<p>These verbs do not need a subject and can not form a sentence without the aid of another verb. It usually preceded by "to".</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>My family likes to <u><b>celebrate</b></u> birthdays together.</li>
+					Here "celebrate" is Infinite verb.
+					<li>My sister went to college to <u><b>become</b></u> a doctor.</li>
+					Here "become" is Infinite verb.
+				</ol>
+			</div>
+		</div>
+		<p>Based on object taken verbs can be diivded into two forms.</p>
+		<div class="types">
+			<ol type="I">
+				<li>Transitive verbs</li>
+				<li>Intransitive verbs</li>
+			</ol>
+		</div>
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Transitive verbs:-</h3>
+				<p>These verbs have objects after them.</p>
+			</div>
+
+			<div class="type-example">
+				<ol type="i">
+					<li>He <u><b>plays</b></u> guitar.</li>
+					Here "plays" is Transitive verb, since it needed object "guitar" to make a meaningful sentence.
+					<li>The speaker <u><b>discussed</b></u> different marketing strategies in the video.</li>
+					Here "discussed" is Transitive verb, since it needed object "different marketing strategies" to make a meaningful sentence.
+				</ol>
+			</div>
+		</div>
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Intransitive verbs:-</h3>
+				<p>These verbs do not have objects after them.</p>
+			</div>
+
+			<div class="type-example">
+				<ol type="i">
+					<li>The students <u><b>arrived</b></u> at the residency in Houston.</li>
+					Here "arrived" is Intransitive Verb, since it does not need object "Houston". If object comes just after Intransitive verb "arrived" it will caus error.
+					<li>The patient's health <u><b>deteriorated quickly</b></u>.</li>
+					Here "deteriorated" is Intransitive verb, otherwise it will cause error in the sentence.
+				</ol>
+			</div>
+		</div>
+		<p><b>NOTE:-</b> Each verb whether it is Finite or Infinite will be Transitive or Intransitive.</p>
+		
+	</div>
+</div>
+<script>
+	function getOption(x) {
+		if (document.getElementById("correct").checked == true) {
+			console.log("Correct");
+			document.getElementById("cr").style.backgroundColor = "#59F6A1";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+
+		}
+		else {
+			console.log("Wrong");
+			// document.body.style.backgroundColor = "White"
+			document.getElementById("cr").style.backgroundColor = "red";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+		}
+	}
+</script>
+{% endblock %}

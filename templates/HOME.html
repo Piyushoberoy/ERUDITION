@@ -1,0 +1,201 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %} <link rel="stylesheet" type="text/css" href="{% static 'CSS/HOME.css' %}"> {% endblock %}
+{% block title %} HOME {% endblock %}
+
+{% block body %}
+  <!--  --------------------------------------DEMO VIDEO--------------------------------------  -->
+
+  <section id="demo-video">
+    <div class="demo-video">
+      <div class="demo-video-content">
+        <div class="demo-video-context">
+          <div class="demo-video-content-title">
+            Book your trial class
+          </div>
+          <div class="demo-video-content-button"><input type="submit" value="Book now" name="book_now"></div>
+          <span>OR</span>
+          <div class="demo-video-content-title">
+            Glance on Recorded lectures
+          </div>
+          <div class="demo-video-content-button"><input type="submit" value="Watch now" name="watch_now"></div>
+        </div>
+      </div>
+      <div class="demo-video-content">
+        <div class="demo-video-image">
+          <img src="../static/IMAGES/DEMO-VIDEO-IMAGE.jpg" alt="Demo Video">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  --------------------------------------REBEL/ADVANTAGES--------------------------------------  -->
+
+  <section>
+    <div class="rebel">
+      <div class="rebel-image"><img src="../static/IMAGES/ADVANTAGES.jpg" alt="SCHOLAR"></div>
+      <div class="rebel-content">
+        <ul>
+          <div class="rebel-title">Why there is need to learn?</div>
+          <li><b>
+              <div class="star">&#9734;</div>
+            </b>English is a global language</li>
+          <li><b>
+              <div class="star">&#9734;</div>
+            </b>Studying English can help you get a job</li>
+          <li><b>
+              <div class="star">&#9734;</div>
+            </b>Travelling is a lot easier with a good knowledge of English</li>
+          <li><b>
+              <div class="star">&#9734;</div>
+            </b>You can learn more than just the language</li>
+          <li><b>
+              <div class="star">&#9734;</div>
+            </b>Enhance your quiver of knowledge with one more shaft.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!--  ------------------------------------------SERVICES--------------------------------------------  -->
+
+  <section>
+    <div class="services-title">Why to <span>learn</span> from here?</div>
+    <div class="services">
+      <div class="service">
+        <div class="service-image"><img src="../static/IMAGES/BOT.png" alt="bot"></div>
+        <div class="service-title">ChatBot support</div>
+        <div class="service-content">
+          We are providing best chat bot services and this is our commitment
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-image"><img src="../static/IMAGES/BOOKS.png" alt="books"></div>
+        <div class="service-title">Study Material</div>
+        <div class="service-content">
+          We are providing best Video lectures and reading materials
+        </div>
+      </div>
+      <div class="service">
+        <div class="service-image"><img src="../static/IMAGES/TEACHER.png" alt="bot"></div>
+        <div class="service-title">Taught Student</div>
+        <div class="service-content">
+          Earn by teaching students.
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--  --------------------------------------CONTACT US--------------------------------------  -->
+
+  <section id="contact-us">
+    <div class="contact-us">
+      <div class="contact-us-title">
+        Contact Us
+      </div>
+      <div class="company-contact">
+        <div class="company-contact-details">
+          <div class="company-contact-title"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="company-contact-context">Comapany location<br>Headquarter:- Sector-35B, Chandigarh</div>
+        </div>
+        <div class="company-contact-details">
+          <div class="company-contact-title"><i class="fas fa-phone"></i></div>
+          <div class="company-contact-context">Call us on<br>+91 9464974691</div>
+        </div>
+        <div class="company-contact-details">
+          <div class="company-contact-title"><i class="fas fa-envelope"></i></div>
+          <div class="company-contact-context">Mail us on<br>ynr24piyush@erudition.com</div>
+        </div>
+      </div>
+      <div class="user-contact">
+        <div class="user-contact-content">
+          <div class="user-contact-title">
+            Apply now
+          </div>
+        </div>
+        <div class="user-contact-content">
+          <div class="user-contact-context">
+            <form action="{% url 'HOME' %}" method="post">
+              {% csrf_token %}
+              <table>
+                <tr>
+                  <td>
+                    <div class="Entries">
+                      <input type="input" class="Entries_field" placeholder="Name" name="name" id='Entries' required />
+                      <label for="Entries" class="Entries_label">Name</label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="Entries">
+                      <input type="tel" class="Entries_field" placeholder="Contact Number" name="contact-number"
+                        id='Entries' required />
+                      <label for="Entries" class="Entries_label">Contact Number</label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="Entries">
+                      <input type="email" class="Entries_field" placeholder="Email" name="email" id='Entries'
+                        required />
+                      <label for="Entries" class="Entries_label">Email</label>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="Entries">
+                      <input type="text" class="Entries_field" placeholder="Date of Birth" name="dob" id='Entries'
+                        onfocus="(this.type='date')" onblur="(this.type='text')" required />
+                      <label for="Entries" class="Entries_label">Date of Birth</label>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="Entries-extended">
+                    <input type="file" id="cv-upload" name="cv" required>
+                    <label for="cv-upload" class="cv-upload">CV</label>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="Entries-extended">
+                    <div class="check-box">
+                      <div class="check">
+                        <input type="checkbox" id="check-box" required>
+                        <label class="checkmark" for="check-box"></label>
+                      </div>
+                      <p>I have read all <a href="#">Terms & Conditions</a> and all the
+                        details filled by me above are varacious to my knowledge.</p>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="Entries-extended">
+                    <label class="button" for="submit">
+                      <svg aria-hidden="true" class="progress" width="70" height="70" viewbox="0 0 70 70">
+                        <path class="progress__circle"
+                          d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z" />
+                        <path class="progress__path"
+                          d="m35,2.5c17.955803,0 32.5,14.544199 32.5,32.5c0,17.955803 -14.544197,32.5 -32.5,32.5c-17.955803,0 -32.5,-14.544197 -32.5,-32.5c0,-17.955801 14.544197,-32.5 32.5,-32.5z"
+                          pathLength="1" />
+                      </svg>
+                      <span>Apply</span>
+                    </label>
+                    <input type="submit" value="Apply" id="submit">
+                  </td>
+                </tr>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    document.getElementById("change-link1").href="#contact-us";
+    document.getElementById("change-link2").href="#demo-video";
+  </script>
+  {% endblock %}

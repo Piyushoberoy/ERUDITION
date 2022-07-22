@@ -1,0 +1,133 @@
+{% extends 'READING/BOTTOM-NAVBAR.html' %}
+{% block sub-title %} NOUN {% endblock %}
+
+{% block content %}
+<div class="content">
+	<div class="content-title">
+		<h1> NOUN </h1>
+		<p>A Noun is a word used as the name of a person, place, or thing.</p>
+	</div>
+
+	<div class="content-context">
+		<div class="example">
+			Reeta is the name of my neighbour's granddaughter, she loves to play football with me. Whenever Reeta saw a herd of elephants she felt very excited and always plea her grandfather to make a ride of it.
+		</div>
+
+		<!-- ----------------------------------------------------------TYPES---------------------------------------------------------- -->
+
+		<div class="types">
+			<ol type="1">Types of nouns:-
+				<li>Common Noun</li>
+				<li>Proper Noun</li>
+				<li>Collective Noun</li>
+				<li>Material Noun</li>
+				<li>Abstract Noun</li>
+			</ol>
+		</div>
+
+		<!-- ----------------------------------------------------------TYPE---------------------------------------------------------- -->
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Common Noun:-</h3>
+				<p>A common noun is a name given in common to every person or thing of the same class or kind.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>The <u><b>dog</b></u> is a faithful animal</li>
+					Here "dog" is common noun as it is common to its class or kind.
+					<li>There are fourty <u><b>trees</b></u> on the road</li>
+					Here "trees" are common noun as it is common to its class, no matter whether there are different
+					trees
+					or
+					not.
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>Proper Noun:-</h3>
+				<p>A proper noun is the name of some particular person or place-as; Ram, Ramayan, The Taj.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>Kalidas is the <u><b>Shakespeare</b></u> of India</li>
+					Here "Shakespeare" is proper noun as it is the name of famous poet.
+					<li>He was the <u><b>Rustum</b></u> of his times</li>
+					Here "Rustum" is proper noun as it is again the name of legendary hero of Persion mythological
+					stories.
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>A Collective Noun:-</h3>
+				<p>A collective noun is the name of a number of persons things together and spoken of as one whole-as; class, army, nation, fleet, family, herd.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>A <u><b>heap</b></u> of rubbish</li>
+					Here "heap" is collective noun as "heap" refers to large number.
+					<li>A <u><b>pack</b></u> of cards.</li>
+					Here "pack" is again a countable part so it is collective noun.
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>A Material Noun:-</h3>
+				<p>A material noun is concerned with metals and things-as; Gold, silver, stone, cotton, wool.</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>The thief was led in <u><b>irons</b></u>.</li>
+					Here "iron" is a material, so it is a material noun.
+					<li>He deals in precious <u><b>stones</b></u>.</li>
+					Here "stone" is a material, so it is material noun.
+				</ol>
+			</div>
+		</div>
+
+		<div class="type-content">
+			<div class="type-heading">
+				<h3>An Abstract Noun:-</h3>
+				<p>A abstract noun is usually the name of a quality, action, or state considered apart from the oject to which it belongs; as:-
+					<li>Quality:- Goodness, whiteness, honesty, wisdom</li>
+					<li>Action:- Laughter, movement, hatred</li>
+					<li>State:- Childhood, boyhood, youth </li>
+				</p>
+			</div>
+			<div class="type-example">
+				<ol type="a">
+					<li>He is a <u><b>justice</b></u> of the place.</li>
+					When an Abstract Noun is preceded by an article it becomes Common Noun. That's why "justice" is considered as Abstract Noun.
+					<li>Kashmir is famous for her natural <u><b>beauties</b></u>.</li>
+					When an Abstract Noun is used in the plural, becomes Common Noun. So, here "beauties" are Abstract
+					Noun.
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+	function getOption(x) {
+		if (document.getElementById("correct").checked == true) {
+			console.log("Correct");
+			document.getElementById("cr").style.backgroundColor = "#59F6A1";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+
+		}
+		else {
+			console.log("Wrong");
+			// document.body.style.backgroundColor = "White"
+			document.getElementById("cr").style.backgroundColor = "red";
+			document.getElementById("cr").style.color = "white";
+			document.getElementById("cr").style.opacity = "1";
+		}
+	}
+</script>
+{% endblock %}

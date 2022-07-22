@@ -1,0 +1,132 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %} <link rel="stylesheet" type="text/css" href="{% static 'CSS/VIDEO.css' %}"> {% endblock %}
+{% block title %} VIDEO {% endblock %}
+
+{% block body %}
+  <!--  --------------------------------------MAIN TOPIC NAVBAR--------------------------------------  -->
+
+  <div class="main-topic-nav" id="main-topic-nav">
+    <div class="main-topic-nav-title">Index</div>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="main-topic-nav-content">
+        {% for i in Topics%}
+        <button value={{i}} name="main-topic">{{i.topic_title}}</button><br>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+  <div class="closing-button main" id="closing-button-main">
+    <button onclick="hide('main-topic-nav','main-mutable','','closing-button-main')"><i class="fas fa-angle-left" id="main-mutable"></i></button>
+  </div>
+
+  <!--  --------------------------------------VIDEO WINDOW--------------------------------------  -->
+
+  <div class="video-window" id="video-window">
+    <div class="video-window-title">{{video.title}} :</div>
+    <div class="video-window-video"><video src="/{{video.video}}" id="video" height="500px" width="100%"
+        controls></video>
+    </div>
+  </div>
+
+  <!--  ------------------------------------------SUB TOPIC NAVBAR--------------------------------------------  -->
+
+  <div class="sub-topic-nav" id="sub-topic-nav">
+    <button><i class="fas fa-angle-left" id="left"></i></button>
+    <button style="float: right;" id="right"><i class="fas fa-angle-right"></i></button>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="sub-topic-nav-content" id="sub-topic-nav-content">
+        {% for i in Videos%}
+        <button type="submit" value={{i}} name="sub-topic"><img src="/{{i.image}}" alt=""></button>
+        {% endfor %}
+      </div>
+    </form>
+  </div>
+  <div class="closing-button sub" id="sub">
+    <button onclick="hide('sub-topic-nav','sub-mutable','sub',this)"><i class="fas fa-angle-down"
+        id="sub-mutable"></i></button>
+  </div>
+
+  <!--  --------------------------------------JAVASCRIPT--------------------------------------  -->
+
+  <script>
+    function hide(X, Y, Z, sp) {
+      var x = document.getElementById(X);
+      var y = document.getElementById(Y);
+      var z = document.getElementById(Z);
+      var Sp = document.getElementById(sp);
+      if (X === "main-topic-nav") {
+        if (x.style.marginLeft === "-265px") {
+          x.style.marginLeft = "0px";
+          y.className = "fas fa-angle-left";
+          x.style.transition = "0.5s";
+          document.getElementById("video-window").style.width="80%";
+          if (Sp.style.position === ""){
+            Sp.style.transition = "0.64s";
+            Sp.style.left = "200px";
+            if (screen.width <=320){
+              Sp.style.left = "170px";
+            }
+          }
+        }
+        else {
+          x.style.marginLeft = "-265px";
+          y.className = "fas fa-angle-right";
+          x.style.transition = "0.82s";
+          document.getElementById("video-window").style.width="90%";
+          if (Sp.style.position === ""){
+            Sp.style.transition = "0.5s";
+            Sp.style.left = "0px";
+          }
+        }
+      }
+      else if (X === "sub-topic-nav") {
+        if (x.style.height === "100px" && x.style.visibility === "hidden") {
+          x.style.height = "90px";
+          x.style.bottom = "0px";
+          x.style.padding = "20px";
+          x.style.paddingTop = "10px";
+          y.className = "fas fa-angle-down";
+          z.style.bottom = "100px";
+          sp.style.borderRadius = "50%";
+          x.style.visibility = "visible";
+        }
+        else {
+          x.style.height = "100px";
+          x.style.bottom = "60px";
+          x.style.padding = "0px";
+          y.className = "fas fa-angle-up";
+          z.style.bottom = "0px";
+          sp.style.borderRadius = "50% 50% 0% 0%";
+          x.style.visibility = "hidden";
+        }
+      }
+    }
+
+    (function (window) {
+      function setupVideo() {
+        var v = document.getElementById('video');
+        v.addEventListener('mouseover', function () { this.controls = true; }, false);
+        v.addEventListener('mouseout', function () { this.controls = false; }, false);
+      }
+
+      window.addEventListener('load', setupVideo, false);
+    })(window);
+
+    const buttonRight = document.getElementById('right');
+    const buttonLeft = document.getElementById('left');
+
+    buttonRight.onclick = function () {
+      document.getElementById("sub-topic-nav-content").scrollLeft += 127;
+    };
+    buttonLeft.onclick = function () {
+      document.getElementById('sub-topic-nav-content').scrollLeft -= 127;
+    };
+    if (screen.width<=1400){
+      hide('main-topic-nav','main-mutable','',this);
+      document.getElementById("video-window").style.width="90%";
+    }
+  </script>
+{% endblock %}

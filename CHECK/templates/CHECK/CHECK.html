@@ -1,0 +1,40 @@
+{% extends 'NAVBAR.html' %}
+{% load static %}
+{% block static %}
+<link rel="stylesheet" type="text/css" href="{% static 'CSS/CHECK.css' %}">
+{% endblock %}
+{% block title %} CHECK {% endblock %}
+
+{% block body %}
+<div class="content-check">
+    <div class="text">
+        <div class="text-title">
+            <h1>Check your text</h1>
+        </div>
+        <div class="text-context">
+            <form action="correct" method="POST">{% csrf_token %}
+                <textarea name="text"></textarea>
+                <button type="submit">Check</button>
+            </form>
+        </div>
+    </div>
+    <div class="text-file">
+        <div class="text-file-title">
+            <h1>Get error free files</h1>
+        </div>
+        <div class="text-file-context">
+            <form action="Correct" method="POST">{% csrf_token %}
+                <label for="file-upload">
+                    Upload
+                </label>
+                <input id="file-upload" type="file">
+                <br>
+                <br>
+                <br>
+                <button type="submit">Check</button>
+            </form>
+            <br>
+        </div>
+    </div>
+</div>
+{% endblock %}

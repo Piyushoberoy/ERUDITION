@@ -1,0 +1,180 @@
+@-webkit-keyframes colorchange {
+    0% {
+      
+      color: rgb(122, 186, 238);
+    }
+    
+    10% {
+      
+      color: #b26ad1;
+    }
+    
+    20% {
+      
+      color: #1abc9c;
+    }
+    
+    30% {
+      
+      color: #d35400;
+    }
+    
+    40% {
+      
+      color: rgb(233, 119, 227);
+    }
+    
+    50% {
+      
+      color: #43cc8c;
+    }
+    
+    60% {
+      
+      color: rgb(204, 94, 145);
+    }
+    
+    70% {
+      
+      color: #29a3b9;
+    }
+    80% {
+   
+      color: #f1dd8df6;
+    }
+    
+    90% {
+   
+      color: #52b3d1;
+    }
+    
+    100% {
+      
+      color: pink;
+    }
+}
+
+.content-check{
+    padding-top: 120px;
+    -webkit-animation: colorchange 20s infinite;
+    text-shadow: 0px 10px 20px var(--theme);
+}
+
+.content-check h1{
+    text-align: center;
+    margin: 6px;
+    padding-bottom: 10px;
+}
+
+.content-check button{
+    padding: 8px;
+    background: none;
+    border-radius: 50px;
+    border: 2px solid rgb(61, 212, 223);
+    width: 130px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 26px;
+    color: black;
+    transition: 1s;
+    cursor: pointer;
+}
+.dark-mode .content-check button{
+    color: white;
+}
+
+.content-check button:hover{
+    background: rgb(61, 212, 223);
+}
+
+/* -------------------------------------------- TEXT ----------------------------------------- */
+
+.text{
+    width: 49%;
+    float: left;
+}
+.text textarea{
+    width: 100%;
+    height: 500px;
+    resize: none;
+    outline: none;
+}
+
+/* ------------------------------------------ TEXT FILE ----------------------------------------- */
+
+.text-file-context{
+    padding-top: 100px;
+}
+
+.text-file input[type=file]{
+    display: none;
+}
+
+.text-file .text-file-context label{
+    padding: 10px;
+    border-radius: 0px 0px 40px 40px;
+    position: absolute;
+    cursor: pointer;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    transition: 1s;
+    transform: translate(-50%);
+    width: 100px;
+    text-align: center;
+    border:rgb(57, 221, 166) solid 2px;
+}
+.dark-mode .text-file .text-file-context label{
+    color: white;
+}
+
+.text-file .text-file-context label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(61, 61, 61, 0.05);
+    z-index: -1;
+    transition: 0.8s;
+    height: 99%;
+    border-radius: 0 0 35px 35px;
+    top: 0px;
+}
+.dark-mode .text-file .text-file-context label::before{
+    background: rgba(255, 255, 255, 0.1);
+}
+.text-file .text-file-context label:hover::before{
+    height: 0%;
+}
+
+/* ------------------------------------------DEVICE SETTINGS----------------------------------------- */
+
+@media screen and (max-width: 1200px) {
+    .content-check{
+        padding-top: 80px;
+    }
+    .content-check h1{
+        text-align: center;
+        font-size: 36px;
+    }
+    .content-check button{
+        width: 100px;
+        font-size: 22px;
+        padding: 6px;
+    }
+
+    .text{
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    
+
+    .text-file-context{
+        padding-top: 50PX;
+    }
+    .text-file .text-file-context label{
+        width: 80px;
+        font-size: 20px;
+        padding: 10px;
+    }
+}
